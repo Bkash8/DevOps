@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DevOps Course</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #0e0e0e, #1a1a1a);
+      color: white;
+    }
+
+    header {
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .container {
+      padding: 60px 50px;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 12px;
+      transition: 0.3s ease;
+      text-decoration: none;
+      color: white;
+    }
+
+    .card:hover {
+      background-color: #2e2e2e;
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin: 15px 0 5px;
+      font-size: 20px;
+    }
+
+    .icon {
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>DevOps Course</h2>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Curriculum</a>
+      <a href="#">Pricing</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>DevOps Course</h1>
+    <p>Learn the essential skills to start a career as a DevOps engineer.</p>
+
+    <h2>Course content</h2>
+    <div class="grid">
+      <a href="linux.html" class="card">
+        <div class="icon">🖥️</div>
+        <h3>Linux</h3>
+        <p>Manage servers and systems</p>
+      </a>
+      <a href="git.html" class="card">
+        <div class="icon">🔧</div>
+        <h3>Git and GitHub</h3>
+        <p>Version control and collaboration</p>
+      </a>
+      <a href="iac.html" class="card">
+        <div class="icon">🛠️</div>
+        <h3>Infrastructure as Code (IaC)</h3>
+        <p>Provision and manage infrastructure</p>
+      </a>
+      <a href="cloud.html" class="card">
+        <div class="icon">☁️</div>
+        <h3>Cloud Platforms</h3>
+        <p>Work with leading cloud providers</p>
+      </a>
+      <a href="ci-cd.html" class="card">
+        <div class="icon">🔁</div>
+        <h3>CI/CD Pipelines</h3>
+        <p>Automate build, test, and deployment</p>
+      </a>
+      <a href="containers.html" class="card">
+        <div class="icon">📦</div>
+        <h3>Containers</h3>
+        <p>Run applications as portable containers</p>
+      </a>
+      <a href="monitoring.html" class="card">
+        <div class="icon">📊</div>
+        <h3>Monitoring & Logging</h3>
+        <p>Track and analyze system performance</p>
+      </a>
+      <a href="config.html" class="card">
+        <div class="icon">⚙️</div>
+        <h3>Configuration Management</h3>
+        <p>Automate system administration</p>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
