@@ -3,48 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <title>Linux - DevOps Course</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background: linear-gradient(to right, #0e0e0e, #1a1a1a);
-      color: white;
-      padding: 40px;
+      color: #ffffff;
     }
 
-    a {
-      color: #00aaff;
+    .topbar {
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+      background: #121212;
+    }
+
+    .breadcrumbs {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .breadcrumbs a {
+      color: #4ea1f3;
       text-decoration: none;
+    }
+
+    .breadcrumbs span {
+      margin: 0 5px;
+    }
+
+    .nav-links a {
+      color: #aaa;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .content {
+      padding: 40px 60px;
+      max-width: 900px;
+      margin: auto;
     }
 
     h1 {
       font-size: 36px;
       margin-bottom: 20px;
+      color: #fff;
     }
 
-    p {
-      font-size: 18px;
+    p, ul {
+      font-size: 16px;
       line-height: 1.6;
+      color: #ddd;
     }
 
-    .back {
-      display: inline-block;
-      margin-bottom: 20px;
-      color: #aaa;
+    ul {
+      padding-left: 20px;
+    }
+
+    code {
+      background-color: #222;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #00e6e6;
     }
   </style>
 </head>
 <body>
-  <a href="DevOps/index.html" class="back">← Back to course</a>
-  <h1>Linux</h1>
-  <p>
-    Linux is a critical operating system used in most DevOps environments. You'll learn how to:
+
+  <div class="topbar">
+    <div class="breadcrumbs">
+      <a href="../index.html">DevOps Course</a> <span>›</span>
+      <strong>Linux</strong>
+    </div>
+    <div class="nav-links">
+      <a href="#">PDF</a>
+      <a href="#">RSS</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>Linux</h1>
+    <p>Linux is a core operating system used across nearly all DevOps environments. In this module, you'll learn to:</p>
+
     <ul>
-      <li>Use Linux commands</li>
-      <li>Manage files and permissions</li>
-      <li>Control services and processes</li>
-      <li>Automate tasks with bash scripting</li>
+      <li>Navigate the Linux file system</li>
+      <li>Use essential commands like <code>ls</code>, <code>cd</code>, <code>cp</code>, <code>mv</code>, <code>chmod</code>, and more</li>
+      <li>Manage users, groups, and permissions</li>
+      <li>Handle processes and services</li>
+      <li>Automate tasks using Bash scripting</li>
+      <li>Configure SSH and work with remote servers</li>
     </ul>
-  </p>
+
+    <p>Mastering Linux gives you the foundation to automate infrastructure, deploy services, and troubleshoot effectively in any DevOps role.</p>
+  </div>
+
 </body>
 </html>
