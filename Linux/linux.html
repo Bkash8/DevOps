@@ -13,12 +13,18 @@
     }
 
     .topbar {
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #333;
-      background: #121212;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        height: 58px;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #333;
+        background: #121212;
     }
 
     .breadcrumbs {
@@ -46,26 +52,56 @@
       color: #fff;
     }
 
-    .content {
-      padding: 40px 60px;
-      max-width: 900px;
-      margin: auto;
+    .container {
+      display: flex;
     }
 
-    h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
+    .sidebar {
+        width: 250px;
+        height: 100vh;
+        position: fixed;
+        top: 58px; /* height of topbar */
+        left: 0;
+        padding: 30px 20px;
+        border-right: 1px solid #333;
+        background-color: #0f0f0f;
+        overflow-y: auto;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 12px;
+    }
+
+    .sidebar a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .sidebar a:hover {
       color: #fff;
     }
 
-    p, ul {
+    .content {
+        flex: 1;
+        padding: 60px;
+        margin-left: 250px; /* same width as sidebar */
+        margin-top: 58px; /* same height as topbar */
+    }
+
+    h1, h2 {
+      color: #ffffff;
+    }
+
+    p, li {
       font-size: 16px;
       line-height: 1.6;
       color: #ddd;
-    }
-
-    ul {
-      padding-left: 20px;
     }
 
     code {
@@ -74,6 +110,14 @@
       border-radius: 4px;
       color: #00e6e6;
     }
+
+    .sidebar a.active {
+        color: #4ea1f3;
+        font-weight: bold;
+        border-left: 3px solid #4ea1f3;
+        padding-left: 5px;
+        }
+
   </style>
 </head>
 <body>
@@ -89,21 +133,116 @@
     </div>
   </div>
 
-  <div class="content">
-    <h1>Linux</h1>
-    <p>Linux is a core operating system used across nearly all DevOps environments. In this module, you'll learn to:</p>
+  <div class="container">
+    <aside class="sidebar">
+      <ul>
+        <li><a href="#what-is-linux">What is Linux?</a></li>
+        <li><a href="#linux-devops">Why Linux is Important in DevOps</a></li>
+        <li><a href="#basic-commands">Basic Linux Commands</a></li>
+        <li><a href="#filesystem">File System Structure</a></li>
+        <li><a href="#users-permissions">User & Permission Management</a></li>
+        <li><a href="#shell-scripting">Shell Scripting</a></li>
+        <li><a href="#package-management">Package Management</a></li>
+        <li><a href="#troubleshooting">Troubleshooting Tips</a></li>
+      </ul>
+    </aside>
 
-    <ul>
-      <li>Navigate the Linux file system</li>
-      <li>Use essential commands like <code>ls</code>, <code>cd</code>, <code>cp</code>, <code>mv</code>, <code>chmod</code>, and more</li>
-      <li>Manage users, groups, and permissions</li>
-      <li>Handle processes and services</li>
-      <li>Automate tasks using Bash scripting</li>
-      <li>Configure SSH and work with remote servers</li>
-    </ul>
+    <main class="content">
+      <h1 id="what-is-linux">What is Linux?</h1>
+      <p>
+        Linux is a free and open-source operating system based on Unix. It powers everything from personal computers and smartphones to servers and cloud infrastructure. Linux is known for its stability, performance, and security.
+      </p>
 
-    <p>Mastering Linux gives you the foundation to automate infrastructure, deploy services, and troubleshoot effectively in any DevOps role.</p>
+      <h2 id="linux-devops">Why Linux is Important in DevOps</h2>
+      <p>
+        Most servers, containers, and CI/CD pipelines in DevOps are built on Linux. Understanding Linux is essential for:
+      </p>
+      <ul>
+        <li>Managing cloud-based systems (like AWS EC2)</li>
+        <li>Automating deployments and configurations</li>
+        <li>Writing scripts for system tasks</li>
+        <li>Troubleshooting performance issues</li>
+      </ul>
+
+      <h2 id="basic-commands">Basic Linux Commands</h2>
+      <ul>
+        <li><code>ls</code> – list directory contents</li>
+        <li><code>cd</code> – change directory</li>
+        <li><code>cp</code>, <code>mv</code>, <code>rm</code> – copy, move, and delete files</li>
+        <li><code>chmod</code>, <code>chown</code> – change permissions and ownership</li>
+        <li><code>top</code>, <code>ps</code> – monitor system processes</li>
+      </ul>
+
+      <h2 id="filesystem">File System Structure</h2>
+      <p>
+        The Linux file system is hierarchical. Key directories include:
+      </p>
+      <ul>
+        <li><code>/</code> – root of the file system</li>
+        <li><code>/home</code> – user directories</li>
+        <li><code>/etc</code> – configuration files</li>
+        <li><code>/var</code> – log files</li>
+        <li><code>/usr</code> – user applications</li>
+      </ul>
+
+      <h2 id="users-permissions">User & Permission Management</h2>
+      <p>
+        Linux uses a permission model (read, write, execute) for user, group, and others.
+      </p>
+      <ul>
+        <li>Create users: <code>useradd</code></li>
+        <li>Switch users: <code>su</code> or <code>sudo</code></li>
+        <li>Check permissions: <code>ls -l</code></li>
+      </ul>
+
+      <h2 id="shell-scripting">Shell Scripting</h2>
+      <p>
+        Bash scripting is used to automate tasks such as deployments, backups, and monitoring.
+      </p>
+      <pre><code>#!/bin/bash
+echo "Hello from Linux script"
+</code></pre>
+
+      <h2 id="package-management">Package Management</h2>
+      <p>
+        Linux uses package managers to install and manage software:
+      </p>
+      <ul>
+        <li>Debian/Ubuntu: <code>apt</code> (e.g. <code>sudo apt install nginx</code>)</li>
+        <li>RHEL/CentOS: <code>yum</code> or <code>dnf</code></li>
+      </ul>
+
+      <h2 id="troubleshooting">Troubleshooting Tips</h2>
+      <ul>
+        <li>Check system logs: <code>journalctl</code> or <code>/var/log</code></li>
+        <li>Inspect services: <code>systemctl status nginx</code></li>
+        <li>Monitor disk: <code>df -h</code>, <code>du -sh *</code></li>
+      </ul>
+    </main>
   </div>
+
+  <script>
+  const sections = document.querySelectorAll("h1[id], h2[id]");
+  const navLinks = document.querySelectorAll(".sidebar a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 120; // offset for sticky topbar
+      if (scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
