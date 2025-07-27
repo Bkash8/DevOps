@@ -37,6 +37,14 @@
       text-decoration: none;
       font-weight: 500;
     }
+    nav a.active {
+      color: #4ea1f3;
+      font-weight: bold;
+      background-color: #1e1e1e;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+
 
     .container {
       padding: 60px 50px;
@@ -81,6 +89,10 @@
     .icon {
       font-size: 30px;
     }
+    html {
+      scroll-behavior: smooth;
+    }
+
   </style>
 </head>
 <body>
@@ -88,14 +100,13 @@
     <nav><a href="index.html"><h1>DevOps Course</h1></a></nav>
     <nav>
       <a href="index.html">Home</a>
-      <a href="curriculum.html">Curriculum</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="about.html">About</a>
-    </nav>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
   </div>
 
 
-  <div class="container">
+  <div id="top" class="container">
     <h1>Welcome to DevOps Course Documentation</h1>
     <p>Learn the essential skills to start a career as a DevOps engineer.</p>
 
@@ -142,6 +153,52 @@
         <p>Automate system administration</p>
       </a>
     </div>
+        <h2 id="curriculum">Curriculum</h2>
+    <p>This course covers core DevOps modules including:</p>
+    <ul>
+      <li>Linux fundamentals</li>
+      <li>Version control with Git & GitHub</li>
+      <li>Infrastructure as Code (IaC)</li>
+      <li>CI/CD pipelines and automation</li>
+      <li>Cloud platforms (AWS, Azure, GCP)</li>
+      <li>Containerization with Docker & Kubernetes</li>
+      <li>Monitoring and configuration management</li>
+    </ul>
+
+    <h2 id="pricing">Pricing</h2>
+    <p>We offer flexible pricing plans to suit your needs:</p>
+    <ul>
+      <li><strong>Free Tier</strong>: Access to Linux & Git content</li>
+      <li><strong>Pro Tier - $49/month</strong>: Full access, certification quizzes, and community support</li>
+      <li><strong>Lifetime Access - $199</strong>: One-time payment for all future updates</li>
+    </ul>
+
+    <h2 id="about">About</h2>
+    <p>The DevOps Course is designed by experienced engineers to provide hands-on practical skills for aspiring DevOps professionals. It focuses on tools, workflows, and real-world scenarios.</p>
+
   </div>
+  <script>
+  const navLinks = document.querySelectorAll(".topbar nav a");
+  const sections = ["", "curriculum", "pricing", "about"];
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(id => {
+      const el = document.getElementById(id || "top");
+      if (!el) return;
+      const offset = el.offsetTop - 70;
+      if (scrollY >= offset) current = id;
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      const href = link.getAttribute("href").replace(".html", "").replace("#", "");
+      if ((href === "" && current === "") || href === current) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
