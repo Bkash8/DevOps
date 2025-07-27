@@ -8,15 +8,27 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to right, #0e0e0e, #1a1a1a);
+      background: linear-gradient(to right, #312727, #252222);
       color: white;
     }
 
-    header {
-      padding: 20px 50px;
+    .topbar {
+      background: linear-gradient(to right, #312727, #252222);
+      padding: 0px 40px;
+      border-bottom: 1px solid #333;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+
+    .topbar h1 {
+      margin: 0;
+      font-size: 24px;
     }
 
     nav a {
@@ -29,6 +41,7 @@
     .container {
       padding: 60px 50px;
     }
+
 
     h1 {
       font-size: 48px;
@@ -71,19 +84,19 @@
   </style>
 </head>
 <body>
-
-  <header>
-    <h2>DevOps Course</h2>
+  <div class="topbar">
+    <nav><a href="index.html"><h1>DevOps Course</h1></a></nav>
     <nav>
-      <a href="#">Home</a>
+      <a href="index.html">Home</a>
       <a href="#">Curriculum</a>
       <a href="#">Pricing</a>
       <a href="#">About</a>
     </nav>
-  </header>
+  </div>
+
 
   <div class="container">
-    <h1>DevOps Course</h1>
+    <h1>Welcome to DevOps Course Documentation</h1>
     <p>Learn the essential skills to start a career as a DevOps engineer.</p>
 
     <h2>Course content</h2>
