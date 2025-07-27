@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DevOps Course</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #312727, #252222);
+      color: white;
+    }
+
+    .topbar {
+      background: linear-gradient(to right, #312727, #252222);
+      padding: 0px 40px;
+      border-bottom: 1px solid #333;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .topbar h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .container {
+      padding: 60px 50px;
+    }
+
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 12px;
+      transition: 0.3s ease;
+      text-decoration: none;
+      color: white;
+    }
+
+    .card:hover {
+      background-color: #2e2e2e;
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin: 15px 0 5px;
+      font-size: 20px;
+    }
+
+    .icon {
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <nav><a href="index.html"><h1>DevOps Course</h1></a></nav>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">Curriculum</a>
+      <a href="#">Pricing</a>
+      <a href="#">About</a>
+    </nav>
+  </div>
